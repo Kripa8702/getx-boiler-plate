@@ -1,5 +1,5 @@
 /// Checks if string consist only Alphabet. (No Whitespace)
-bool isText(
+bool isUsername(
   String? inputString, {
   bool isRequired = false,
 }) {
@@ -60,14 +60,28 @@ bool isValidPassword(
     isInputStringValid = true;
   }
 
+  /// Password should have,
+  /// at least a upper case letter
+  ///  at least a lower case letter
+  ///  at least a digit
+  ///  at least a special character [@#$%^&+=]
+  ///  length of at least 4
+  /// no white space allowed
+  // if (inputString != null && inputString.isNotEmpty) {
+  //   const pattern =
+  //       r'^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$';
+  //
+  //   final regExp = RegExp(pattern);
+  //
+  //   isInputStringValid = regExp.hasMatch(inputString);
+  // }
+
+
+  /// Password should have length of at least 4
   if (inputString != null && inputString.isNotEmpty) {
-    const pattern =
-        r'^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$';
-
-    final regExp = RegExp(pattern);
-
-    isInputStringValid = regExp.hasMatch(inputString);
+    if (inputString.length >= 4) {
+      isInputStringValid = true;
+    }
   }
-
   return isInputStringValid;
 }

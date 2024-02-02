@@ -18,9 +18,11 @@ class LoginScreen extends StatefulWidget {
 
   static Widget builder(BuildContext context) {
     return BlocProvider<LoginBloc>(
-        create: (context) =>
-            LoginBloc(authRepo: context.read<AuthRepository>()),
-        child: const LoginScreen());
+      create: (context) => LoginBloc(
+        authRepo: context.read<AuthRepository>(),
+      ),
+      child: const LoginScreen(),
+    );
   }
 
   @override
@@ -38,9 +40,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginBloc, LoginState>(
       listener: (context, state) {
-        if(state.status == LoginStatus.success) {
-          NavigatorService.pushNamedAndRemoveUntil(
-              AppRoutes.landingPageScreen);
+        if (state.status == LoginStatus.success) {
+          NavigatorService.pushNamedAndRemoveUntil(AppRoutes.landingPageScreen);
         }
       },
       builder: (context, state) {
@@ -65,8 +66,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         textInputType: TextInputType.emailAddress,
                         validator: (value) {
                           if (value == null ||
-                              (!isText(value, isRequired: true))) {
-                            return "err_msg_please_enter_valid_email".tr;
+                              (!isUsername(value, isRequired: true))) {
+                            return "err_msg_please_enter_valid_username".tr;
                           }
                           return null;
                         },
@@ -115,7 +116,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             context.read<LoginBloc>().add(Login(
                                 email: emailController.text,
                                 password: passwordController.text));
-
                           }
                         },
                       ),

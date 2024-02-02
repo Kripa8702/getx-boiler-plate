@@ -12,7 +12,7 @@ class AuthRepository {
   final DioClient dioClient;
   final PrefUtils prefUtils = PrefUtils();
 
-  bool get isSignedIn => prefUtils.getString("accessToken") != null;
+  bool get isSignedIn => prefUtils.getString("token") != null;
 
   Future<UserModel> signIn(String username, String password) async {
     try{
