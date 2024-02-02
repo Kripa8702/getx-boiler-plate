@@ -1,5 +1,4 @@
 import 'package:bloc_boiler_plate/config/flavour_config.dart';
-import 'package:bloc_boiler_plate/constants/enum_constants.dart';
 import 'package:bloc_boiler_plate/features/widgets/bloc_boilerplate_app.dart';
 import 'package:bloc_boiler_plate/simple_bloc_observer.dart';
 import 'package:bloc_boiler_plate/utils/pref_utils.dart';
@@ -9,14 +8,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
-const Environment environment = Environment.development;
-
+//Specify the environment
+const Env env = Env.dev;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   final config = FlavorConfig(
-    appName: "Staging App",
-    apiBaseUrl: "https://dummyjson.com", // Replace with your Staging API URL
-    env: Env.staging,
+    appName: appNames[env] ?? "Development App",
+    apiBaseUrl: apiBaseUrls[env] ?? "https://dummyjson.com", // Replace with your Development API URL
+    env: env,
   );
   ///Uncomment this code if you are using Firebase
   // await Firebase.initializeApp(
@@ -32,7 +31,7 @@ void main() {
     ]),
     PrefUtils().init(),
   ]).then(
-        (value) {
+    (value) {
       runApp(
         BlocBoilerPlateApp(
           flavorConfig: config,

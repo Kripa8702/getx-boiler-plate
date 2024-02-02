@@ -50,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
             resizeToAvoidBottomInset: false,
             body: Form(
               key: _formKey,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: SingleChildScrollView(
                 padding: EdgeInsets.only(top: 11.v),
                 child: Container(
@@ -64,15 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: emailController,
                         hintText: "lbl_username".tr,
                         textInputType: TextInputType.emailAddress,
+                        onChanged: (value){
+                          setState(() {});
+                        },
                         validator: (value) {
                           if (value == null ||
                               (!isUsername(value, isRequired: true))) {
                             return "err_msg_please_enter_valid_username".tr;
                           }
                           return null;
-                        },
-                        onChanged: (value) {
-                          setState(() {});
                         },
                       ),
                       SizedBox(height: 24.v),
@@ -81,6 +82,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: "lbl_password".tr,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,
+                        onChanged: (value){
+                          setState(() {});
+                        },
                         validator: (value) {
                           if (value == null ||
                               (!isValidPassword(value, isRequired: true))) {

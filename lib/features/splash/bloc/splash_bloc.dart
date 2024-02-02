@@ -22,16 +22,16 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     Emitter<SplashState> emit,
   ) async {
     Future.delayed(const Duration(milliseconds: 3000), () {
-      if(event.context.read<AuthRepository>().isSignedIn){
-        NavigatorService.popAndPushNamed(
-          AppRoutes.splashScreen,
-        );
-      }
-      else {
+      // if(event.context.read<AuthRepository>().isSignedIn){
+      //   NavigatorService.popAndPushNamed(
+      //     AppRoutes.splashScreen,
+      //   );
+      // }
+      // else {
         NavigatorService.popAndPushNamed(
         AppRoutes.loginOrSignupScreen,
       );
-      }
+      // }
     });
   }
 }
