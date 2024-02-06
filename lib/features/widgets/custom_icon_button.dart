@@ -64,10 +64,3 @@ class CustomIconButton extends StatelessWidget {
       );
 }
 
-/// Extension to provide styles to [CustomIconButton]
-extension IconButtonStyleHelper on CustomIconButton {
-  static BoxDecoration get fillGray => BoxDecoration(
-        color: gray5002,
-        borderRadius: BorderRadius.circular(14.h),
-      );
-}

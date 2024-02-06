@@ -16,7 +16,7 @@ Map<Env, String>  apiBaseUrls= {
 
 //Replace with your app names
 Map<Env, String>  appNames= {
-  Env.dev: "Development App",
-  Env.prod: "Production App",
-  Env.staging: "Staging App"
+  Env.dev: "Development",
+  Env.prod: "Production",
+  Env.staging: "Staging"
 };

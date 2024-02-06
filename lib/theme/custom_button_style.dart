@@ -1,10 +1,10 @@
+import 'package:bloc_boiler_plate/features/widgets/custom_icon_button.dart';
 import 'package:bloc_boiler_plate/theme/colors.dart';
 import 'package:bloc_boiler_plate/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
-/// A class that offers pre-defined button styles for customizing button appearance.
+/// Extension to provide styles to [ElevatedButton]
 class CustomButtonStyles {
-  // Filled button style
   static ButtonStyle get fillDeepOrange => ElevatedButton.styleFrom(
         backgroundColor: deepOrange,
         shape: RoundedRectangleBorder(
@@ -32,3 +32,12 @@ class CustomButtonStyles {
         elevation: MaterialStateProperty.all<double>(0),
       );
 }
+
+/// Extension to provide styles to [IconButton]
+class IconButtonStyles {
+  static BoxDecoration get fillGray => BoxDecoration(
+    color: gray5002,
+    borderRadius: BorderRadius.circular(14.h),
+  );
+}
+

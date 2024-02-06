@@ -1,5 +1,5 @@
 import 'package:bloc_boiler_plate/config/flavour_config.dart';
-import 'package:bloc_boiler_plate/features/widgets/bloc_boilerplate_app.dart';
+import 'package:bloc_boiler_plate/bloc_boilerplate_app.dart';
 import 'package:bloc_boiler_plate/simple_bloc_observer.dart';
 import 'package:bloc_boiler_plate/utils/pref_utils.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ const Env env = Env.dev;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   final config = FlavorConfig(
-    appName: appNames[env] ?? "Development App",
+    appName: appNames[env] ?? "Development",
     apiBaseUrl: apiBaseUrls[env] ?? "https://dummyjson.com", // Replace with your Development API URL
     env: env,
   );

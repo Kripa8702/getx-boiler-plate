@@ -2,6 +2,7 @@ import 'dart:async';
 
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
+import 'package:bloc_boiler_plate/features/authentication/repository/auth_repository.dart';
 import 'package:bloc_boiler_plate/routing/app_routes.dart';
 import 'package:bloc_boiler_plate/utils/navigator_service.dart';
 import 'package:equatable/equatable.dart';

@@ -4,13 +4,25 @@ import 'package:flutter/material.dart';
 class ServerException implements Exception {
   final String message;
   final int statusCode;
+
   ServerException(this.message, {this.statusCode = 500});
+
+  @override
+  String toString() {
+    return message;
+  }
 }
 
 class NetworkException implements Exception {
   final String message;
   final int statusCode;
+
   NetworkException(this.message, {this.statusCode = 500});
+
+  @override
+  String toString() {
+    return message;
+  }
 }
 
 class UnAuthorizedException implements Exception {
@@ -18,6 +30,11 @@ class UnAuthorizedException implements Exception {
   final int statusCode;
 
   UnAuthorizedException(this.message, {this.statusCode = 401});
+
+  @override
+  String toString() {
+    return message;
+  }
 }
 
 class BadRequestException implements Exception {
@@ -25,6 +42,11 @@ class BadRequestException implements Exception {
   final int statusCode;
 
   BadRequestException(this.message, {this.statusCode = 400});
+
+  @override
+  String toString() {
+    return message;
+  }
 }
 
 class OtherException implements Exception {
@@ -32,6 +54,11 @@ class OtherException implements Exception {
   final int statusCode;
 
   OtherException(this.message, {this.statusCode = 500});
+
+  @override
+  String toString() {
+    return message;
+  }
 }
 
 ///can be used for throwing [NoInternetException]
@@ -44,10 +71,5 @@ class NoInternetException implements Exception {
           .showSnackBar(SnackBar(content: Text(message)));
     }
     _message = message;
-  }
-
-  @override
-  String toString() {
-    return _message;
   }
 }

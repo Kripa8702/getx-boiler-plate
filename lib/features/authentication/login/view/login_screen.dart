@@ -36,6 +36,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   TextEditingController passwordController = TextEditingController();
 
+  bool onSubmit = false;
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginBloc, LoginState>(
@@ -50,7 +52,9 @@ class _LoginScreenState extends State<LoginScreen> {
             resizeToAvoidBottomInset: false,
             body: Form(
               key: _formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
+              autovalidateMode: onSubmit
+                  ? AutovalidateMode.onUserInteraction
+                  : AutovalidateMode.disabled,
               child: SingleChildScrollView(
                 padding: EdgeInsets.only(top: 11.v),
                 child: Container(
@@ -65,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: emailController,
                         hintText: "lbl_username".tr,
                         textInputType: TextInputType.emailAddress,
-                        onChanged: (value){
+                        onChanged: (value) {
                           setState(() {});
                         },
                         validator: (value) {
@@ -82,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintText: "lbl_password".tr,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,
-                        onChanged: (value){
+                        onChanged: (value) {
                           setState(() {});
                         },
                         validator: (value) {
@@ -116,10 +120,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         isLoading: state.status == LoginStatus.loading,
                         onPressed: () {
+                          setState(() {
+                            onSubmit = true;
+                          });
                           if (_formKey.currentState!.validate()) {
-                            context.read<LoginBloc>().add(Login(
-                                email: emailController.text,
-                                password: passwordController.text));
+                            context.read<LoginBloc>().add(
+                                  Login(
+                                    email: emailController.text,
+                                    password: passwordController.text,
+                                  ),
+                                );
                           }
                         },
                       ),

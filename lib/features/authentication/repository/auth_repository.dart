@@ -15,7 +15,7 @@ class AuthRepository {
   bool get isSignedIn => prefUtils.getString("token") != null;
 
   Future<UserModel> signIn(String username, String password) async {
-    try{
+    try {
       final response = await dioClient.post(
         login,
         data: {
@@ -24,10 +24,8 @@ class AuthRepository {
         },
       );
 
-      prefUtils.setString(key: "token", value: response.data["token"]);
-      prefUtils.setBool("isLoggedIn", true);
       return UserModel.fromSignInResponse(response.data);
-    } on DioException{
+    } catch (e) {
       rethrow;
     }
   }

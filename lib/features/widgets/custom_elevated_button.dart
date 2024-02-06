@@ -1,34 +1,25 @@
-import 'package:bloc_boiler_plate/features/widgets/base_button.dart';
 import 'package:bloc_boiler_plate/theme/app_styles.dart';
 import 'package:bloc_boiler_plate/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
-class CustomElevatedButton extends BaseButton {
+class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
-    super.key,
+    Key? key,
+    required this.text,
+    this.onPressed,
+    this.buttonStyle,
+    this.buttonTextStyle,
+    this.isDisabled,
+    this.height,
+    this.width,
+    this.margin,
+    this.alignment,
     this.decoration,
     this.leftIcon,
     this.rightIcon,
     this.isLoading = false,
-    EdgeInsets? margin,
-    VoidCallback? onPressed,
-    ButtonStyle? buttonStyle,
-    Alignment? alignment,
-    TextStyle? buttonTextStyle,
-    bool? isDisabled,
-    double? height,
-    double? width,
-    required String text,
   }) : super(
-          text: text,
-          onPressed: onPressed,
-          buttonStyle: buttonStyle,
-          isDisabled: isDisabled,
-          buttonTextStyle: buttonTextStyle,
-          height: height,
-          width: width,
-          alignment: alignment,
-          margin: margin,
+          key: key,
         );
 
   final BoxDecoration? decoration;
@@ -38,6 +29,24 @@ class CustomElevatedButton extends BaseButton {
   final Widget? rightIcon;
 
   final bool isLoading;
+
+  final String text;
+
+  final VoidCallback? onPressed;
+
+  final ButtonStyle? buttonStyle;
+
+  final TextStyle? buttonTextStyle;
+
+  final bool? isDisabled;
+
+  final double? height;
+
+  final double? width;
+
+  final EdgeInsets? margin;
+
+  final Alignment? alignment;
 
   @override
   Widget build(BuildContext context) {
