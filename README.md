@@ -1,4 +1,4 @@
-# bloc_boiler_plate
+# getx_boiler_plate
 
 A new Flutter project.
 

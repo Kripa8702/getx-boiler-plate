@@ -1,20 +1,17 @@
-import 'package:bloc_boiler_plate/features/widgets/custom_elevated_button.dart';
-import 'package:bloc_boiler_plate/features/widgets/custom_icon_button.dart';
-import 'package:bloc_boiler_plate/localizations/app_localization.dart';
-import 'package:bloc_boiler_plate/routing/app_routes.dart';
-import 'package:bloc_boiler_plate/theme/app_styles.dart';
-import 'package:bloc_boiler_plate/theme/colors.dart';
-import 'package:bloc_boiler_plate/theme/custom_button_style.dart';
-import 'package:bloc_boiler_plate/utils/navigator_service.dart';
-import 'package:bloc_boiler_plate/utils/size_utils.dart';
+import 'package:get/get.dart' hide Trans;
+import 'package:getx_boiler_plate/features/widgets/custom_elevated_button.dart';
+import 'package:getx_boiler_plate/features/widgets/custom_icon_button.dart';
+import 'package:getx_boiler_plate/localizations/app_localization.dart';
+import 'package:getx_boiler_plate/routing/app_routes.dart';
+import 'package:getx_boiler_plate/theme/app_styles.dart';
+import 'package:getx_boiler_plate/theme/colors.dart';
+import 'package:getx_boiler_plate/theme/custom_button_style.dart';
+import 'package:getx_boiler_plate/utils/navigator_service.dart';
+import 'package:getx_boiler_plate/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 class LoginOrSignupScreen extends StatelessWidget {
   const LoginOrSignupScreen({Key? key}) : super(key: key);
-
-  static Widget builder(BuildContext context) {
-    return const LoginOrSignupScreen();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +34,7 @@ class LoginOrSignupScreen extends StatelessWidget {
                     NavigatorService.goBack();
                   },
                   child:
-                      const Center(child: Icon(Icons.arrow_back_ios, size: 16)),
+                  const Center(child: Icon(Icons.arrow_back_ios, size: 16)),
                 ),
               ),
               SizedBox(height: 41.v),
@@ -51,7 +48,7 @@ class LoginOrSignupScreen extends StatelessWidget {
               Text(
                 "lbl_get_in_through".tr,
                 style:
-                    CustomTextStyles.titleMedium.copyWith(color: primaryColor),
+                CustomTextStyles.titleMedium.copyWith(color: primaryColor),
               ),
               SizedBox(height: 33.v),
               CustomElevatedButton(
@@ -76,9 +73,7 @@ class LoginOrSignupScreen extends StatelessWidget {
                   fontSize: 16.fSize,
                 ),
                 onPressed: () {
-                  NavigatorService.pushNamed(
-                    AppRoutes.loginScreen,
-                  );
+                  Get.toNamed(AppRoutes.loginScreen);
                 },
               ),
               SizedBox(height: 5.v)

@@ -1,7 +1,7 @@
-import 'package:bloc_boiler_plate/constants/api_path.dart';
-import 'package:bloc_boiler_plate/features/authentication/model/user_model.dart';
-import 'package:bloc_boiler_plate/utils/dio_client.dart';
-import 'package:bloc_boiler_plate/utils/pref_utils.dart';
+import 'package:getx_boiler_plate/constants/api_path.dart';
+import 'package:getx_boiler_plate/features/authentication/model/user_model.dart';
+import 'package:getx_boiler_plate/utils/dio_client.dart';
+import 'package:getx_boiler_plate/utils/pref_utils.dart';
 import 'package:dio/dio.dart';
 
 class AuthRepository {

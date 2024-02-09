@@ -1,4 +1,4 @@
-import 'package:bloc_boiler_plate/utils/navigator_service.dart';
+import 'package:getx_boiler_plate/utils/navigator_service.dart';
 
 import 'en_us/en_us_translations.dart';
 import 'package:flutter/foundation.dart';

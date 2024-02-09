@@ -1,6 +1,6 @@
 {
-    "name": "bloc_boiler_plate",
-    "short_name": "bloc_boiler_plate",
+    "name": "getx_boiler_plate",
+    "short_name": "getx_boiler_plate",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -64,8 +64,8 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFC8B4612B6CC678004FC034 /* Runner copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Runner copy-Info.plist"; path = "/Users/atli10/FlutterProjects/bloc_boiler_plate/ios/Runner copy-Info.plist"; sourceTree = "<absolute>"; };
-		CFC8B4742B6CC701004FC034 /* dev copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "dev copy-Info.plist"; path = "/Users/atli10/FlutterProjects/bloc_boiler_plate/ios/dev copy-Info.plist"; sourceTree = "<absolute>"; };
+		CFC8B4612B6CC678004FC034 /* Runner copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Runner copy-Info.plist"; path = "/Users/atli10/FlutterProjects/getx_boiler_plate/ios/Runner copy-Info.plist"; sourceTree = "<absolute>"; };
+		CFC8B4742B6CC701004FC034 /* dev copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "dev copy-Info.plist"; path = "/Users/atli10/FlutterProjects/getx_boiler_plate/ios/dev copy-Info.plist"; sourceTree = "<absolute>"; };
 		D381B8B21EF6616416D022DB /* Pods-RunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

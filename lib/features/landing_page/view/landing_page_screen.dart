@@ -1,9 +1,7 @@
-import 'package:bloc_boiler_plate/features/bottom_navigation_bar/view/bottom_navigation_screen.dart';
-import 'package:bloc_boiler_plate/features/landing_page/bloc/landing_page_bloc.dart';
+import 'package:get/get.dart';
+import 'package:getx_boiler_plate/features/bottom_navigation_bar/view/bottom_navigation_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-
+import 'package:getx_boiler_plate/features/landing_page/controller/landing_page_controller.dart';
 
 const List<Widget> bottomNavScreen = <Widget>[
   Text('Home'),
@@ -13,32 +11,23 @@ const List<Widget> bottomNavScreen = <Widget>[
   Text('Cart'),
 ];
 
-class LandingPageScreen extends StatelessWidget {
+class LandingPageScreen extends GetWidget<LandingPageController> {
   const LandingPageScreen({super.key});
-
-  static Widget builder(BuildContext context) {
-    return BlocProvider<LandingPageBloc>(
-        create: (context) =>
-            LandingPageBloc(),
-        child: const LandingPageScreen());
-  }
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LandingPageBloc, LandingPageState>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        return Scaffold(
-          body: Center(child: bottomNavScreen.elementAt(state.tabIndex)),
-          bottomNavigationBar: BottomNavigationScreen(
-            tabIndex: state.tabIndex,
-            onTabChange: (index) {
-              BlocProvider.of<LandingPageBloc>(context)
-                  .add(TabChange(tabIndex: index));
-            },
-          )
-        );
-      },
-    );
+    return Obx(() {
+      return Scaffold(
+        body: Center(
+          child: bottomNavScreen.elementAt(controller.tabIndex.value),
+        ),
+        bottomNavigationBar: BottomNavigationScreen(
+          tabIndex: controller.tabIndex.value,
+          onTabChange: (index) {
+            controller.tabIndex.value = index;
+          },
+        ),
+      );
+    });
   }
 }

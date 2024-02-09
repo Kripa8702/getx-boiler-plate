@@ -1,4 +1,4 @@
-import 'package:bloc_boiler_plate/constants/array_constants.dart';
+import 'package:getx_boiler_plate/constants/array_constants.dart';
 import 'package:flutter/material.dart';
 
 

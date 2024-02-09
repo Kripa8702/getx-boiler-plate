@@ -1,6 +1,6 @@
-import 'package:bloc_boiler_plate/config/flavour_config.dart';
-import 'package:bloc_boiler_plate/exceptions/exceptions.dart';
-import 'package:bloc_boiler_plate/utils/pref_utils.dart';
+import 'package:getx_boiler_plate/config/flavour_config.dart';
+import 'package:getx_boiler_plate/exceptions/exceptions.dart';
+import 'package:getx_boiler_plate/utils/pref_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 

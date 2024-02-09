@@ -1,6 +1,6 @@
-import 'package:bloc_boiler_plate/features/widgets/custom_icon_button.dart';
-import 'package:bloc_boiler_plate/theme/colors.dart';
-import 'package:bloc_boiler_plate/utils/size_utils.dart';
+import 'package:getx_boiler_plate/features/widgets/custom_icon_button.dart';
+import 'package:getx_boiler_plate/theme/colors.dart';
+import 'package:getx_boiler_plate/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 /// Extension to provide styles to [ElevatedButton]

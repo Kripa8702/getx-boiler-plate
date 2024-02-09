@@ -1,5 +1,5 @@
-import 'package:bloc_boiler_plate/theme/app_styles.dart';
-import 'package:bloc_boiler_plate/utils/size_utils.dart';
+import 'package:getx_boiler_plate/theme/app_styles.dart';
+import 'package:getx_boiler_plate/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {

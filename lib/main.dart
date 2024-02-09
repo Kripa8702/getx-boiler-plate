@@ -1,10 +1,8 @@
-import 'package:bloc_boiler_plate/config/flavour_config.dart';
-import 'package:bloc_boiler_plate/bloc_boilerplate_app.dart';
-import 'package:bloc_boiler_plate/simple_bloc_observer.dart';
-import 'package:bloc_boiler_plate/utils/pref_utils.dart';
+import 'package:getx_boiler_plate/config/flavour_config.dart';
+import 'package:getx_boiler_plate/getx_boilerplate_app.dart';
+import 'package:getx_boiler_plate/utils/pref_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
@@ -24,7 +22,6 @@ void main() {
   // );
 
 
-  Bloc.observer = const SimpleBlocObserver();
   Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -33,7 +30,7 @@ void main() {
   ]).then(
     (value) {
       runApp(
-        BlocBoilerPlateApp(
+        GetxBoilerPlateApp(
           flavorConfig: config,
         ),
       );

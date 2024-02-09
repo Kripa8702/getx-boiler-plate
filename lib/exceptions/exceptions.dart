@@ -1,4 +1,4 @@
-import 'package:bloc_boiler_plate/main.dart';
+import 'package:getx_boiler_plate/main.dart';
 import 'package:flutter/material.dart';
 
 class ServerException implements Exception {
