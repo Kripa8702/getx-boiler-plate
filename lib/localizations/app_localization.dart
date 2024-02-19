@@ -1,4 +1,4 @@
-import 'package:getx_boiler_plate/utils/navigator_service.dart';
+import 'package:get/get.dart';
 
 import 'en_us/en_us_translations.dart';
 import 'package:flutter/foundation.dart';
@@ -13,7 +13,7 @@ class AppLocalization {
 
   static AppLocalization of() {
     return Localizations.of<AppLocalization>(
-        NavigatorService.navigatorKey.currentContext!, AppLocalization)!;
+        Get.context!, AppLocalization)!;
   }
 
   static List<String> languages() => _localizedValues.keys.toList();

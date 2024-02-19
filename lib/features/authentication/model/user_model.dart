@@ -66,6 +66,15 @@ class UserModel extends Equatable {
         'address': address!.toJson(),
       };
 
+  Map<String, dynamic> toSignInResponseJson() => {
+        'id': id,
+        'username': username,
+        'email': email,
+        'firstName': firstName,
+        'lastName': lastName,
+        'token': token
+      };
+
   @override
   List<Object?> get props => [id, username, email, firstName, lastName, token];
 }
@@ -102,7 +111,7 @@ class Address {
       };
 }
 
-class Coordinates{
+class Coordinates {
   final double lat;
   final double lng;
 
@@ -112,12 +121,12 @@ class Coordinates{
   });
 
   factory Coordinates.fromJson(Map<String, dynamic> json) => Coordinates(
-    lat: json['lat'],
-    lng: json['lng'],
-  );
+        lat: json['lat'],
+        lng: json['lng'],
+      );
 
   Map<String, dynamic> toJson() => {
-    'lat': lat,
-    'lng': lng,
-  };
+        'lat': lat,
+        'lng': lng,
+      };
 }

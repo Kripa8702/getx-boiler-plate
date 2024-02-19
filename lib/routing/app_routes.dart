@@ -14,7 +14,7 @@ class AppRoutes {
 
   static const String loginScreen = '/login_screen';
 
-  static const String landingPageScreen = '/landing_page';
+  static String landingPageScreen = '/landing_page';
 
 
   static List<GetPage> pages =[
@@ -33,7 +33,7 @@ class AppRoutes {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: landingPageScreen,
+      name: AppRoutes.landingPageScreen,
       page: () => const LandingPageScreen(),
       binding: LandingPageBinding(),
     ),

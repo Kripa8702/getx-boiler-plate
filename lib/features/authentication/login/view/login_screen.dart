@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:getx_boiler_plate/features/authentication/login/controller/login_controller.dart';
 import 'package:getx_boiler_plate/features/widgets/custom_elevated_button.dart';
 import 'package:getx_boiler_plate/features/widgets/custom_text_form_field.dart';

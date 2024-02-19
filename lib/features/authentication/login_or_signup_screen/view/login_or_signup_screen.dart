@@ -1,6 +1,4 @@
-import 'package:get/get.dart' hide Trans;
 import 'package:getx_boiler_plate/features/widgets/custom_elevated_button.dart';
-import 'package:getx_boiler_plate/features/widgets/custom_icon_button.dart';
 import 'package:getx_boiler_plate/localizations/app_localization.dart';
 import 'package:getx_boiler_plate/routing/app_routes.dart';
 import 'package:getx_boiler_plate/theme/app_styles.dart';
@@ -23,20 +21,6 @@ class LoginOrSignupScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 32.h, vertical: 39.v),
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(left: 17.h),
-                child: CustomIconButton(
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
-                  padding: EdgeInsets.only(left: 5.h),
-                  alignment: Alignment.centerLeft,
-                  onTap: () {
-                    NavigatorService.goBack();
-                  },
-                  child:
-                  const Center(child: Icon(Icons.arrow_back_ios, size: 16)),
-                ),
-              ),
               SizedBox(height: 41.v),
               _buildPageHeader(context),
               SizedBox(height: 30.v),
@@ -73,7 +57,7 @@ class LoginOrSignupScreen extends StatelessWidget {
                   fontSize: 16.fSize,
                 ),
                 onPressed: () {
-                  Get.toNamed(AppRoutes.loginScreen);
+                  NavigatorService.pushNamed(AppRoutes.loginScreen);
                 },
               ),
               SizedBox(height: 5.v)
