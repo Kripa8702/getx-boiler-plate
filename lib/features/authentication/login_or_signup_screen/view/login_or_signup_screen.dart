@@ -21,14 +21,8 @@ class LoginOrSignupScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 32.h, vertical: 39.v),
           child: Column(
             children: [
-              SizedBox(height: 41.v),
               _buildPageHeader(context),
-              SizedBox(height: 30.v),
-              // CustomImageView(
-              //     imagePath: ImageConstant.imgLogoGray5001,
-              //     height: 105.v,
-              //     width: 117.h),
-              SizedBox(height: 33.v),
+              SizedBox(height: 150.v),
               Text(
                 "lbl_get_in_through".tr,
                 style:

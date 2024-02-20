@@ -1,10 +1,12 @@
 import 'package:getx_boiler_plate/features/authentication/login/controller/login_controller.dart';
 import 'package:getx_boiler_plate/features/widgets/custom_elevated_button.dart';
+import 'package:getx_boiler_plate/features/widgets/custom_icon_button.dart';
 import 'package:getx_boiler_plate/features/widgets/custom_text_form_field.dart';
 import 'package:getx_boiler_plate/localizations/app_localization.dart';
 import 'package:getx_boiler_plate/theme/app_styles.dart';
 import 'package:getx_boiler_plate/theme/colors.dart';
 import 'package:getx_boiler_plate/theme/custom_button_style.dart';
+import 'package:getx_boiler_plate/utils/navigator_service.dart';
 import 'package:getx_boiler_plate/utils/size_utils.dart';
 import 'package:getx_boiler_plate/validators/validation_functions.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,6 @@ class LoginScreen extends GetWidget<LoginController> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +36,22 @@ class LoginScreen extends GetWidget<LoginController> {
               padding: EdgeInsets.only(top: 11.v),
               child: Container(
                 margin: EdgeInsets.only(bottom: 5.v),
-                padding: EdgeInsets.symmetric(horizontal: 32.h),
+                padding: EdgeInsets.symmetric(horizontal: 32.h, vertical: 39.v),
                 child: Column(
                   children: [
+                    CustomIconButton(
+                      height: 24.adaptSize,
+                      width: 24.adaptSize,
+                      padding: EdgeInsets.only(left: 5.h),
+                      alignment: Alignment.centerLeft,
+                      onTap: () {
+                        NavigatorService.pop();
+                      },
+                      child: const Center(
+                          child: Icon(Icons.arrow_back_ios, size: 16)),
+                    ),
                     _buildPageHeader(context),
-                    SizedBox(height: 21.v),
-                    SizedBox(height: 115.v),
+                    SizedBox(height: 100.v),
                     CustomTextFormField(
                       controller: emailController,
                       hintText: "lbl_username".tr,
@@ -92,8 +103,7 @@ class LoginScreen extends GetWidget<LoginController> {
                         color: secondaryTextColor,
                         fontSize: 16.fSize,
                       ),
-                      isLoading:
-                      controller.status.value == LoginStatus.loading
+                      isLoading: controller.status.value == LoginStatus.loading
                           ? true
                           : false,
                       onPressed: () {
@@ -119,8 +129,7 @@ class LoginScreen extends GetWidget<LoginController> {
                             padding: EdgeInsets.only(left: 8.h),
                             child: Text(
                               "lbl_sign_up".tr,
-                              style: CustomTextStyles.labelLarge
-                                  .copyWith(
+                              style: CustomTextStyles.labelLarge.copyWith(
                                   decoration: TextDecoration.underline),
                             ),
                           )
