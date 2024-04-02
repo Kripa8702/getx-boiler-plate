@@ -36,7 +36,16 @@ class LoginController extends GetxController {
         AppRoutes.landingPageScreen,
       );
     } on DioException catch (e) {
-      ToastUtils.showToast(e.response?.data["message"]);
+      status.value = LoginStatus.failure;
+      if (e.response?.data["message"] == null) {
+        ToastUtils.showToast("Something went wrong! Please try again later.");
+      } else {
+        ToastUtils.showToast(e.response?.data["message"]);
+      }
+      status.value = LoginStatus.failure;
+    } catch (e) {
+      status.value = LoginStatus.failure;
+      ToastUtils.showToast(e.toString());
       status.value = LoginStatus.failure;
     }
   }

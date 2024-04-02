@@ -3,32 +3,32 @@ import 'package:getx_boiler_plate/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    Key? key,
-    this.alignment,
-    this.width,
-    this.scrollPadding,
-    this.controller,
-    this.focusNode,
-    this.autofocus = false,
-    this.textStyle,
-    this.obscureText = false,
-    this.textInputAction = TextInputAction.next,
-    this.textInputType = TextInputType.text,
-    this.maxLines,
-    this.hintText,
-    this.hintStyle,
-    this.prefix,
-    this.prefixConstraints,
-    this.suffix,
-    this.suffixConstraints,
-    this.contentPadding,
-    this.borderDecoration,
-    this.fillColor,
-    this.filled = false,
-    this.validator,
-    this.onChanged
-  }) : super(
+  const CustomTextFormField(
+      {Key? key,
+      this.alignment,
+      this.width,
+      this.scrollPadding,
+      this.controller,
+      this.focusNode,
+      this.autofocus = false,
+      this.textStyle,
+      this.obscureText = false,
+      this.textInputAction = TextInputAction.next,
+      this.textInputType = TextInputType.text,
+      this.maxLines,
+      this.hintText,
+      this.hintStyle,
+      this.prefix,
+      this.prefixConstraints,
+      this.suffix,
+      this.suffixConstraints,
+      this.contentPadding,
+      this.borderDecoration,
+      this.fillColor,
+      this.filled = false,
+      this.validator,
+      this.onChanged})
+      : super(
           key: key,
         );
 
@@ -114,12 +114,13 @@ class CustomTextFormField extends StatelessWidget {
 
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle ?? TextStyle(
-          color: primaryColor.withOpacity(0.4),
-          fontSize: 14.fSize,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w500,
-        ),
+        hintStyle: hintStyle ??
+            TextStyle(
+              color: primaryColor.withOpacity(0.4),
+              fontSize: 14.fSize,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
+            ),
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,

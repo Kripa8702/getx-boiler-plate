@@ -21,7 +21,6 @@ void main() {
   //   options: FirebaseConfig().firebaseConfig,
   // );
 
-
   Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,

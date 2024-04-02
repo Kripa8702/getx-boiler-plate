@@ -1,3 +1,4 @@
+import 'package:getx_boiler_plate/constants/form_values.dart';
 import 'package:getx_boiler_plate/features/authentication/login/controller/login_controller.dart';
 import 'package:getx_boiler_plate/features/widgets/custom_elevated_button.dart';
 import 'package:getx_boiler_plate/features/widgets/custom_icon_button.dart';
@@ -17,9 +18,11 @@ class LoginScreen extends GetWidget<LoginController> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController usernameController =
+      TextEditingController(text: FormValues.username);
 
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController passwordController =
+      TextEditingController(text: FormValues.password);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,7 @@ class LoginScreen extends GetWidget<LoginController> {
                     _buildPageHeader(context),
                     SizedBox(height: 100.v),
                     CustomTextFormField(
-                      controller: emailController,
+                      controller: usernameController,
                       hintText: "lbl_username".tr,
                       textInputType: TextInputType.emailAddress,
                       onChanged: (value) {},
@@ -110,7 +113,7 @@ class LoginScreen extends GetWidget<LoginController> {
                         controller.onSubmit.value = true;
                         if (_formKey.currentState!.validate()) {
                           controller.login(
-                              emailController.text, passwordController.text);
+                              usernameController.text, passwordController.text);
                         }
                       },
                     ),

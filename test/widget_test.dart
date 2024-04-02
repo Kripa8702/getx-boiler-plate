@@ -5,15 +5,24 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:getx_boiler_plate/getx_boilerplate_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:getx_boiler_plate/config/flavour_config.dart';
+import 'package:getx_boiler_plate/getx_boilerplate_app.dart';
 
+const Env env = Env.dev;
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const GetxBoilerPlateApp());
+    await tester.pumpWidget(GetxBoilerPlateApp(
+      flavorConfig: FlavorConfig(
+        appName: appNames[env] ?? "Development",
+        apiBaseUrl: apiBaseUrls[env] ?? "https://dummyjson.com",
+        // Replace with your Development API URL
+        env: env,
+      ),
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
